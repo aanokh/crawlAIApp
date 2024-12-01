@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-crawlaiapp-dev-af660-authRole",
+      "UnauthRoleArn": "arn:aws:iam::971422696111:role/amplify-crawlaiapp-dev-af660-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::971422696111:role/amplify-crawlaiapp-dev-af660-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-crawlaiapp-dev-af660-deployment",
+      "UnauthRoleName": "amplify-crawlaiapp-dev-af660-unauthRole",
+      "StackName": "amplify-crawlaiapp-dev-af660",
+      "StackId": "arn:aws:cloudformation:us-west-2:971422696111:stack/amplify-crawlaiapp-dev-af660/57428660-b029-11ef-bddb-0a55a6262923",
+      "AmplifyAppId": "dk2qdjw7rym8x"
+    }
+  }
+}
