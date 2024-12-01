@@ -9,9 +9,9 @@ import { addChat } from '@/app/redux/slices/asstListSlice'
 import { newChatHistory } from '@/app/redux/slices/currentChatSlice';
 import { exitEditMode } from '@/app/redux/slices/editAsstSlice';
 
-import Amplify from 'aws-amplify';
+import Amplify from '@aws-amplify';
 import awsconfig from '@/src/aws-exports';
-import { API } from 'aws-amplify';
+import { API } from '@aws-amplify/api';
 
 const Header = () => {
   Amplify.configure(awsconfig);
