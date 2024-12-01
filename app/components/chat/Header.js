@@ -10,7 +10,7 @@ import { newChatHistory } from '@/app/redux/slices/currentChatSlice';
 import { exitEditMode } from '@/app/redux/slices/editAsstSlice';
 
 import Amplify from 'aws-amplify';
-import awsconfig from '../../../src/aws-exports';
+import awsconfig from './src/aws-exports';
 import { API } from 'aws-amplify';
 
 const Header = () => {
