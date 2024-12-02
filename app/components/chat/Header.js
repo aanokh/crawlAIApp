@@ -18,9 +18,9 @@ import { Amplify } from 'aws-amplify';
 
 import { get } from 'aws-amplify/api';
 
-const apiClient = generateClient({
-  baseUrl: 'https://m5be9u11f0.execute-api.us-west-2.amazonaws.com/default',
-});
+//const apiClient = generateClient({
+//  baseUrl: 'https://m5be9u11f0.execute-api.us-west-2.amazonaws.com/default',
+//});
 
 const Header = () => {
   Amplify.configure(awsconfig);
