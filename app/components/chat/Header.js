@@ -11,7 +11,7 @@ import { exitEditMode } from '@/app/redux/slices/editAsstSlice';
 
 import { Amplify } from 'aws-amplify';
 import awsconfig from '@/src/aws-exports';
-import { API } from '@aws-amplify/api-rest';
+import API from '@aws-amplify/api-rest';
 
 const Header = () => {
   Amplify.configure(awsconfig);
