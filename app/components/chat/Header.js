@@ -9,11 +9,18 @@ import { addChat } from '@/app/redux/slices/asstListSlice'
 import { newChatHistory } from '@/app/redux/slices/currentChatSlice';
 import { exitEditMode } from '@/app/redux/slices/editAsstSlice';
 
-import Amplify, { API } from 'aws-amplify';
-import awsconfig from '@/src/aws-exports';
+//import Amplify, { API } from 'aws-amplify';
+//import awsconfig from '@/src/aws-exports';
+
+//import { generateClient } from '@aws-amplify/api-rest';
+import { generateClient } from 'aws-amplify/api';
+
+const apiClient = generateClient({
+  baseUrl: 'https://m5be9u11f0.execute-api.us-west-2.amazonaws.com/default',
+});
 
 const Header = () => {
-  Amplify.configure(awsconfig);
+  //Amplify.configure(awsconfig);
   const currentAssisstant = useSelector(state => state.asstList.currentAssisstant);
   const currentChat = useSelector(state => state.asstList.currentChat);
 
@@ -33,7 +40,7 @@ const Header = () => {
 
   const handleLoginPress = async () => {
     try {
-      const response = await API.get('amplify-test-api', '/on-user-message'); // Replace with your resource path
+      const response = await apiClient.get('/on-user-message'); // Replace with your resource path
       console.log('Lambda Response:', response);
     } catch (error) {
       console.error('Error calling Lambda:', error);
