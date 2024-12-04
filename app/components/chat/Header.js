@@ -23,7 +23,6 @@ import { LambdaClient, InvokeCommand } from "@aws-sdk/client-lambda";
 
 Amplify.configure(awsconfig);
 console.error(JSON.stringify(awsExports));
-const client = new LambdaClient({ region: "us-west-2" });
 
 //const apiClient = generateClient({
 //  baseUrl: 'https://m5be9u11f0.execute-api.us-west-2.amazonaws.com/default',
@@ -66,10 +65,8 @@ const Header = () => {
       }).response;*/
     
       const credentials = await Auth.currentCredentials();
-        AWS.config.update({
-        region: awsconfig.aws_project_region,
-        credentials: credentials,
-      });
+
+      const client = new LambdaClient({ region: "us-west-2", credentials: credentials });
 
       const command = new InvokeCommand({
         FunctionName: "on-user-message",
