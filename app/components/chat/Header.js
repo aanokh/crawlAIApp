@@ -21,7 +21,7 @@ import { get } from 'aws-amplify/api';
 import { LambdaClient, InvokeCommand } from "@aws-sdk/client-lambda";
 
 Amplify.configure(awsconfig);
-console.error(JSON.stringify(awsExports));
+console.error(JSON.stringify(awsconfig));
 
 //const apiClient = generateClient({
 //  baseUrl: 'https://m5be9u11f0.execute-api.us-west-2.amazonaws.com/default',
