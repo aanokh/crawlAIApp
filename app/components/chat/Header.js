@@ -19,6 +19,8 @@ import { Amplify } from 'aws-amplify';
 import { get } from 'aws-amplify/api';
 import { LambdaClient, InvokeCommand } from "@aws-sdk/client-lambda";
 
+Amplify.configure(awsExports);
+console.error(JSON.stringify(awsExports));
 const client = new LambdaClient({ region: "us-west-2" });
 
 //const apiClient = generateClient({
@@ -26,7 +28,6 @@ const client = new LambdaClient({ region: "us-west-2" });
 //});
 
 const Header = () => {
-  Amplify.configure(awsExports);
   const currentAssisstant = useSelector(state => state.asstList.currentAssisstant);
   const currentChat = useSelector(state => state.asstList.currentChat);
 
