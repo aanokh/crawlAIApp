@@ -13,7 +13,7 @@ import { exitEditMode } from '@/app/redux/slices/editAsstSlice';
 import awsconfig from '@/src/aws-exports';
 import { Amplify } from 'aws-amplify';
 import { Auth } from 'aws-amplify';
-import AWS from 'aws-sdk';
+import AWS from '@aws-sdk';
 
 //import { generateClient } from '@aws-amplify/api-rest';
 //import { generateClient } from 'aws-amplify/api';
