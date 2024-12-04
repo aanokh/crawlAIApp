@@ -10,20 +10,23 @@ import { newChatHistory } from '@/app/redux/slices/currentChatSlice';
 import { exitEditMode } from '@/app/redux/slices/editAsstSlice';
 
 //import Amplify, { API } from 'aws-amplify';
-import awsconfig from '@/src/aws-exports';
+import awsExports from '@/src/aws-exports';
 import { Amplify } from 'aws-amplify';
 
 //import { generateClient } from '@aws-amplify/api-rest';
 //import { generateClient } from 'aws-amplify/api';
 
 import { get } from 'aws-amplify/api';
+import { LambdaClient, InvokeCommand } from "@aws-sdk/client-lambda";
+
+const client = new LambdaClient({ region: "us-west-2" });
 
 //const apiClient = generateClient({
 //  baseUrl: 'https://m5be9u11f0.execute-api.us-west-2.amazonaws.com/default',
 //});
 
 const Header = () => {
-  Amplify.configure(awsconfig);
+  Amplify.configure(awsExports);
   const currentAssisstant = useSelector(state => state.asstList.currentAssisstant);
   const currentChat = useSelector(state => state.asstList.currentChat);
 
@@ -44,7 +47,7 @@ const Header = () => {
   const handleLoginPress = async () => {
     try {
       //const response = await apiClient.get('/on-user-message'); // Replace with your resource path
-        
+      /*
       const apiName = 'amplify-test-api'
       const path = '/on-user-message'
       const headers = {}
@@ -57,7 +60,13 @@ const Header = () => {
           headers,
           queryParams,
         }
-      }).response;
+      }).response;*/
+
+      const command = new InvokeCommand({
+        FunctionName: "on-user-message",
+        Payload: JSON.stringify({ key: "value" }),
+      });
+      const response = await client.send(command);
 
       console.log('Lambda Response:', response);
     } catch (error) {

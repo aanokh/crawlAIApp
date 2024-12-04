@@ -11,5 +11,23 @@
       "StackId": "arn:aws:cloudformation:us-west-2:971422696111:stack/amplify-crawlaiapp-dev-af660/57428660-b029-11ef-bddb-0a55a6262923",
       "AmplifyAppId": "dk2qdjw7rym8x"
     }
+  },
+  "crawlapp": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-crawlaiapp-crawlapp-ff7b0-authRole",
+      "UnauthRoleArn": "arn:aws:iam::971422696111:role/amplify-crawlaiapp-crawlapp-ff7b0-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::971422696111:role/amplify-crawlaiapp-crawlapp-ff7b0-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-crawlaiapp-crawlapp-ff7b0-deployment",
+      "UnauthRoleName": "amplify-crawlaiapp-crawlapp-ff7b0-unauthRole",
+      "StackName": "amplify-crawlaiapp-crawlapp-ff7b0",
+      "StackId": "arn:aws:cloudformation:us-west-2:971422696111:stack/amplify-crawlaiapp-crawlapp-ff7b0/6080d420-b1b4-11ef-814c-063866770f8f",
+      "AmplifyAppId": "dk2qdjw7rym8x"
+    },
+    "categories": {
+      "function": {
+        "testlamba": {}
+      }
+    }
   }
 }

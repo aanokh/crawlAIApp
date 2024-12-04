@@ -1,1 +1,30 @@
-{}
+{
+  "api": {
+    "newtestapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "testlamba"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "testlamba": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "on-user-message": {
+      "build": false,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  }
+}
