@@ -10,8 +10,10 @@ import { newChatHistory } from '@/app/redux/slices/currentChatSlice';
 import { exitEditMode } from '@/app/redux/slices/editAsstSlice';
 
 //import Amplify, { API } from 'aws-amplify';
-import awsExports from '@/src/aws-exports';
+import awsconfig from '@/src/aws-exports';
 import { Amplify } from 'aws-amplify';
+import { Auth } from 'aws-amplify';
+import AWS from 'aws-sdk';
 
 //import { generateClient } from '@aws-amplify/api-rest';
 //import { generateClient } from 'aws-amplify/api';
@@ -19,7 +21,7 @@ import { Amplify } from 'aws-amplify';
 import { get } from 'aws-amplify/api';
 import { LambdaClient, InvokeCommand } from "@aws-sdk/client-lambda";
 
-Amplify.configure(awsExports);
+Amplify.configure(awsconfig);
 console.error(JSON.stringify(awsExports));
 const client = new LambdaClient({ region: "us-west-2" });
 
@@ -62,6 +64,12 @@ const Header = () => {
           queryParams,
         }
       }).response;*/
+    
+      const credentials = await Auth.currentCredentials();
+        AWS.config.update({
+        region: awsconfig.aws_project_region,
+        credentials: credentials,
+      });
 
       const command = new InvokeCommand({
         FunctionName: "on-user-message",
