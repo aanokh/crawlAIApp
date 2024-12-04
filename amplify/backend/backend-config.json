@@ -20,11 +20,6 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
-    },
-    "on-user-message": {
-      "build": false,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
     }
   }
 }
