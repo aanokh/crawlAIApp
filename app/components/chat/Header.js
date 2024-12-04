@@ -63,7 +63,7 @@ const Header = () => {
         }
       }).response;*/
     
-      const credentials = await Auth.currentCredentials();
+      //const credentials = await Auth.currentCredentials();
 
       const client = new LambdaClient({ region: "us-west-2"});
 
