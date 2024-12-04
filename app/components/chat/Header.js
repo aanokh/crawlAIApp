@@ -12,7 +12,7 @@ import { exitEditMode } from '@/app/redux/slices/editAsstSlice';
 //import Amplify, { API } from 'aws-amplify';
 import awsconfig from '@/src/aws-exports';
 import { Amplify } from 'aws-amplify';
-import { Auth } from 'aws-amplify';
+//import { Auth } from 'aws-amplify';
 
 //import { generateClient } from '@aws-amplify/api-rest';
 //import { generateClient } from 'aws-amplify/api';
@@ -65,7 +65,7 @@ const Header = () => {
     
       const credentials = await Auth.currentCredentials();
 
-      const client = new LambdaClient({ region: "us-west-2", credentials: credentials });
+      const client = new LambdaClient({ region: "us-west-2"});
 
       const command = new InvokeCommand({
         FunctionName: "on-user-message",
